@@ -1,38 +1,38 @@
 // @ts-check
 import { test, expect } from "@playwright/test";
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 import SPcredentials from "../credentials/SPcredentials";
 import axfoodCredentials from "../credentials/axfoodCredentials";
 import { Console } from "console";
 const XLSX = require("xlsx");
 
 
-// Email configuration
-console.log("mail started");
-const transporter = nodemailer.createTransport({
-  service: 'gmail', // Change if using another email provider
-  auth: {
-    user: 'trucstesting@gmail.com',  // Replace with your email
-    pass: 'Trucs@12345'  // Use an App Password instead of a normal password for security
-  }
-});
+// const nodemailer = require('nodemailer');
 
-// Function to send failure email
-async function sendFailureEmail(testName, errorMessage) {
-  const mailOptions = {
-    from: 'trucstesting@gmail.com',
-    to: 'rasikashanmugham@gmail.com',  // Replace with recipient email
-    subject: `🚨 Playwright Test Failed: ${testName}`,
-    text: `❌ The test "${testName}" has failed.\n\n📌 Error Details:\n${errorMessage}`
-  };
+// // Create transporter
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail', // or use 'smtp' for custom settings
+//   auth: {
+//     user: 'your-email@gmail.com',
+//     pass: 'your-app-password' // Use App Password (not regular Gmail password)
+//   }
+// });
 
-  try {
-    await transporter.sendMail(mailOptions);
-    console.log('📧 Failure email sent.');
-  } catch (error) {
-    console.error('❌ Error sending email:', error);
-  }
-}
+// // Send email
+// const mailOptions = {
+//   from: 'your-email@gmail.com',
+//   to: 'receiver-email@example.com',
+//   subject: 'Test Email',
+//   text: 'Hello, this is a test email from Nodemailer!'
+// };
+
+// transporter.sendMail(mailOptions, (error, info) => {
+//   if (error) {
+//     console.log('Error:', error);
+//   } else {
+//     console.log('Email sent:', info.response);
+//   }
+// });
 test("Create xlsx", async ({}) => {
 
   
