@@ -31,7 +31,7 @@ export default defineConfig({
   timeout: 2 * 100 * 2000,
  
   expect: {
-    timeout: 30 * 2000,
+    timeout: 5 * 2000,
   },
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -41,6 +41,7 @@ export default defineConfig({
     // trace: 'on-first-retry',
     trace: 'on-first-retry',  // Generates trace on failure
     screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
