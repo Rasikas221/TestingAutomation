@@ -23,16 +23,7 @@ const XLSX = require("xlsx");
 //   from: 'your-email@gmail.com',
 //   to: 'receiver-email@example.com',
 //   subject: 'Test Email',
-//   text: 'Hello, this is a test email from Nodemailer!'
-// };
-
-// transporter.sendMail(mailOptions, (error, info) => {
-//   if (error) {
-//     console.log('Error:', error);
-//   } else {
-//     console.log('Email sent:', info.response);
-//   }
-// });
+//   text: 'Hello, this is a test e
 test("Create xlsx", async ({}) => {
 
   
