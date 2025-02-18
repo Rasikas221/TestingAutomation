@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Axfood Demand Forecast
 
 on:
   workflow_dispatch: 
@@ -24,12 +24,12 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test --project=chromium
+    - name: Run Axfood Demand Forecast
+      run: npx Axfood Demand Forecast --project=chromium
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report
+        name: Axfood Demand Forecast Report
         path: playwright-report/
         retention-days: 30
      
