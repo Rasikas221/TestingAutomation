@@ -7,23 +7,6 @@ import { Console } from "console";
 const XLSX = require("xlsx");
 
 
-// const nodemailer = require('nodemailer');
-
-// // Create transporter
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail', // or use 'smtp' for custom settings
-//   auth: {
-//     user: 'your-email@gmail.com',
-//     pass: 'your-app-password' // Use App Password (not regular Gmail password)
-//   }
-// });
-
-// // Send email
-// const mailOptions = {
-//   from: 'your-email@gmail.com',
-//   to: 'receiver-email@example.com',
-//   subject: 'Test Email',
-//   text: 'Hello, this is a test e
 test("Create xlsx", async ({}) => {
 
   
@@ -50,9 +33,7 @@ console.log("date and time");
 test("Download and Upload Report", async ({ page }) => {
   
   console.log("download and upload");
-  // try {
-
-  
+    
     // Navigate to the Axfood supplier portal
     await page.goto("https://leverantor.axfood.se/");
     await expect(page).toHaveTitle(/Axfood IT AB/);
@@ -140,9 +121,7 @@ test("Download and Upload Report", async ({ page }) => {
 
     // Verify file upload success
     await expect(page.getByRole("alert")).toBeVisible();
-  // } catch (error) {
-  //   console.log("Error: ", error);
-  // }
+  
 
 
   await page.close();
